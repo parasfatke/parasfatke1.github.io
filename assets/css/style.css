@@ -81,6 +81,10 @@ section h2 { text-align: center; margin-bottom: 3rem; font-size: 2rem; }
 .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
 .gallery-grid img { width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border-color); }
 
+/* Contact Specific */
+.contact-info a { color: var(--accent-color); text-decoration: none; font-weight: bold; }
+.contact-info a:hover { text-decoration: underline; }
+
 /* Footer */
 footer { text-align: center; padding: 2rem; background: var(--nav-bg); border-top: 1px solid var(--border-color); }
 
