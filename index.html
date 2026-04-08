@@ -4,145 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paras Ajin Fatke | AIML Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     
     <style>
-        /* --- PROFESSIONAL CSS STYLING --- */
+        /* --- PREMIUM COLOR THEME --- */
         :root {
-            --bg-color: #f4f7f6;
-            --text-color: #2b2d42;
-            --nav-bg: #ffffff;
+            /* Light Mode Colors */
+            --bg-color: #f8fafc;
+            --text-main: #0f172a;
+            --text-muted: #475569;
             --card-bg: #ffffff;
-            --accent-color: #4361ee;
-            --secondary-accent: #3f37c9;
-            --border-color: #edf2f4;
-            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --nav-bg: rgba(255, 255, 255, 0.95);
+            --accent-color: #4f46e5; /* Deep Indigo */
+            --gradient-accent: linear-gradient(135deg, #4f46e5, #9333ea);
+            --border-color: #e2e8f0;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
 
         [data-theme="dark"] {
+            /* Dark Mode Colors - Deep Slate */
             --bg-color: #0f172a;
-            --text-color: #f8fafc;
-            --nav-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
             --card-bg: #1e293b;
+            --nav-bg: rgba(15, 23, 42, 0.95);
+            --accent-color: #818cf8; /* Light Indigo */
+            --gradient-accent: linear-gradient(135deg, #818cf8, #c084fc);
             --border-color: #334155;
-            --accent-color: #3b82f6;
-            --shadow: 0 10px 30px rgba(0,0,0,0.4);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
+        /* --- GLOBAL SETTINGS --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        html {
+            /* This fixes the navigation linking issue! */
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px; /* Prevents nav bar from covering sections */
+        }
+
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             background-color: var(--bg-color);
-            color: var(--text-color);
-            transition: background-color 0.4s ease, color 0.4s ease;
+            color: var(--text-main);
+            transition: background-color 0.3s ease, color 0.3s ease;
             line-height: 1.7;
         }
 
-        /* Navigation */
+        /* --- NAVIGATION BAR --- */
         nav {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 1.2rem 8%; background-color: var(--nav-bg);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky; top: 0; z-index: 1000;
-            transition: background-color 0.4s ease;
-        }
-
-        .logo { font-size: 1.5rem; font-weight: 700; color: var(--accent-color); letter-spacing: 1px; }
-        .nav-links { list-style: none; display: flex; gap: 2rem; }
-        .nav-links a { text-decoration: none; color: var(--text-color); font-weight: 600; font-size: 0.9rem; transition: color 0.3s; }
-        .nav-links a:hover { color: var(--accent-color); }
-
-        /* Buttons */
-        .btn {
-            padding: 0.6rem 1.2rem; border: none; border-radius: 8px; font-family: 'Poppins', sans-serif;
-            font-weight: 600; cursor: pointer; transition: all 0.3s ease;
-        }
-        .theme-btn { background: var(--border-color); color: var(--text-color); }
-        .theme-btn:hover { background: var(--accent-color); color: white; }
-        
-        .primary-btn { 
-            background: linear-gradient(135deg, var(--accent-color), var(--secondary-accent)); 
-            color: white; text-decoration: none; display: inline-block; 
-            margin-top: 1.5rem; padding: 0.8rem 2rem; border-radius: 30px;
-            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.4);
-        }
-        .primary-btn:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(67, 97, 238, 0.6); }
-
-        /* Sections */
-        section { padding: 6rem 8%; }
-        section h2 { 
-            text-align: center; margin-bottom: 3rem; font-size: 2.5rem; 
-            position: relative; display: inline-block; left: 50%; transform: translateX(-50%);
-        }
-        section h2::after {
-            content: ''; position: absolute; width: 50%; height: 4px;
-            background: var(--accent-color); bottom: -10px; left: 25%; border-radius: 2px;
-        }
-
-        /* Hero Section */
-        .hero { text-align: center; padding-top: 8rem; min-height: 80vh; display: flex; flex-direction: column; align-items: center; justify-content: center;}
-        .profile-pic { 
-            width: 200px; height: 200px; border-radius: 50%; object-fit: cover; 
-            border: 5px solid var(--nav-bg); box-shadow: var(--shadow); margin-bottom: 1.5rem;
-            background-color: #ccc; /* Fallback if image breaks */
-        }
-        .hero h1 { font-size: 3rem; margin-bottom: 0.5rem; }
-        .subtitle { font-size: 1.2rem; opacity: 0.8; font-weight: 300; max-width: 600px; margin: 0 auto;}
-
-        /* Cards & Grids */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
-        .card { 
-            background: var(--card-bg); padding: 2rem; border-radius: 15px; 
-            border: 1px solid var(--border-color); box-shadow: var(--shadow); 
-            transition: transform 0.3s ease, box-shadow 0.3s ease; 
-        }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
-        .project-img { 
-            width: 100%; height: 200px; object-fit: cover; border-radius: 10px; 
-            margin-bottom: 1.5rem; background-color: #ddd;
-        }
-        .card h3 { color: var(--accent-color); margin-bottom: 1rem; }
-        .link { color: var(--accent-color); text-decoration: none; font-weight: 600; display: inline-block; margin-top: 1rem; }
-        .link:hover { text-decoration: underline; }
-
-        /* About Section formatting */
-        .about-content { background: var(--card-bg); padding: 3rem; border-radius: 15px; box-shadow: var(--shadow); }
-        .about-content ul { margin-top: 1.5rem; list-style-position: inside; }
-        .about-content li { margin-bottom: 0.8rem; }
-
-        /* Footer */
-        footer { text-align: center; padding: 2rem; background: var(--nav-bg); font-size: 0.9rem; opacity: 0.8; }
-
-        /* Animations */
-        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-        /* Broken Image Fallback styling */
-        img[alt] { text-align: center; font-size: 0.8rem; color: gray; }
-    </style>
-</head>
-<body>
-
-    <nav>
-        <div class="logo">Paras.dev</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <button id="theme-toggle" class="btn theme-btn">🌙 Dark Mode</button>
-    </nav>
-
-    <section id="home" class="hero fade-in">
-        <img src="assets/images/profile.jpg" alt="Upload profile.jpg to assets/images/" class="profile-pic">
-        <h1>Hi, I'm Paras Ajin Fatke</h1>
-        <p class="subtitle">Undergraduate B.Tech AIML Student | AI Enthusiast | Video Editor</p>
-        <a href="#projects" class="btn primary-btn">Explore My Work</a>
-    </section>
-
-    <section id="about" class="fade-in">
-        <h2>About Me</h2>
-        <div class="about-content">
-            <p>I am an undergraduate
+            padding: 1.2rem 8%; 
+            background: var(--nav-bg);
+            backdrop-filter: blur(10px); /* Blurry glass effect */
+            border-bottom: 1px solid var(--border-color);
+            position: sticky; top: 0; z-index:
