@@ -58,4 +58,199 @@
             background: var(--nav-bg);
             backdrop-filter: blur(10px); /* Blurry glass effect */
             border-bottom: 1px solid var(--border-color);
-            position: sticky; top: 0; z-index:
+            position: sticky; top: 0; z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .logo { font-size: 1.5rem; font-weight: 800; background: var(--gradient-accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { list-style: none; display: flex; gap: 2rem; }
+        .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.95rem; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--accent-color); }
+
+        /* --- BUTTONS --- */
+        .btn {
+            padding: 0.6rem 1.2rem; border: none; border-radius: 8px; font-family: inherit;
+            font-weight: 600; cursor: pointer; transition: all 0.3s ease;
+        }
+        .theme-btn { background: var(--card-bg); color: var(--text-main); border: 1px solid var(--border-color); }
+        .theme-btn:hover { border-color: var(--accent-color); color: var(--accent-color); }
+        
+        .primary-btn { 
+            background: var(--gradient-accent); color: white; text-decoration: none; 
+            display: inline-block; margin-top: 1.5rem; padding: 0.8rem 2.5rem; 
+            border-radius: 30px; font-weight: 600; box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+        }
+        .primary-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(79, 70, 229, 0.6); }
+
+        /* --- SECTIONS --- */
+        section { padding: 5rem 8%; }
+        section h2 { 
+            text-align: center; margin-bottom: 3.5rem; font-size: 2.5rem; font-weight: 800;
+        }
+
+        /* Hero Section */
+        .hero { text-align: center; padding-top: 7rem; min-height: 80vh; display: flex; flex-direction: column; align-items: center; justify-content: center;}
+        .profile-pic { 
+            width: 180px; height: 180px; border-radius: 50%; object-fit: cover; 
+            border: 4px solid var(--accent-color); box-shadow: var(--shadow); margin-bottom: 2rem;
+        }
+        .hero h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 0.5rem; letter-spacing: -1px; }
+        .hero .highlight { background: var(--gradient-accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .subtitle { font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;}
+
+        /* Cards & Grids */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .card { 
+            background: var(--card-bg); padding: 2.5rem; border-radius: 16px; 
+            border: 1px solid var(--border-color); box-shadow: var(--shadow); 
+            transition: transform 0.3s ease, border-color 0.3s ease; 
+        }
+        .card:hover { transform: translateY(-8px); border-color: var(--accent-color); }
+        .project-img { 
+            width: 100%; height: 200px; object-fit: cover; border-radius: 8px; 
+            margin-bottom: 1.5rem; background-color: var(--border-color);
+        }
+        .card h3 { color: var(--text-main); margin-bottom: 1rem; font-size: 1.4rem; }
+        .card p { color: var(--text-muted); }
+        
+        .link { color: var(--accent-color); text-decoration: none; font-weight: 600; display: inline-block; margin-top: 1rem; }
+        .link:hover { text-decoration: underline; }
+
+        /* List Styling */
+        ul { list-style: none; }
+        li { margin-bottom: 1rem; color: var(--text-muted); }
+        strong { color: var(--text-main); }
+
+        /* Footer */
+        footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border-color); color: var(--text-muted); }
+
+        /* Animations */
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Paras.</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button id="theme-toggle" class="btn theme-btn">🌙 Dark</button>
+    </nav>
+
+    <section id="home" class="hero fade-in">
+        <img src="assets/images/profile.jpg" alt="Profile" class="profile-pic">
+        <h1>Hi, I'm <span class="highlight">Paras Ajin Fatke</span></h1>
+        <p class="subtitle">B.Tech AIML Undergraduate | Innovative Problem Solver | Professional Video Editor</p>
+        <a href="#projects" class="btn primary-btn">View My Work</a>
+    </section>
+
+    <section id="about" class="fade-in">
+        <h2>About Me</h2>
+        <div class="card">
+            <p style="margin-bottom: 1.5rem; color: var(--text-muted); font-size: 1.1rem;">I am a student driven by the potential of Artificial Intelligence to solve complex real-world problems. As an aspiring AIML Engineer, I specialize in building intelligent algorithms and data-driven solutions, while also applying my creative skills to high-quality video editing.</p>
+            <ul>
+                <li><strong>🎓 Education:</strong> Undergraduate B.Tech in Artificial Intelligence & Machine Learning, MIT Vishwaprayag University</li>
+                <li><strong>🚀 Strengths:</strong> Algorithm Design, Problem Solving, C Programming, Brand Management</li>
+                <li><strong>💡 Interests:</strong> Machine Learning, Video Editing, Automotive Tech, Content Creation</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects" class="fade-in">
+        <h2>Featured Projects</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="assets/images/ai4a-screenshot.jpg" alt="Ai4A" class="project-img">
+                <h3>Ai4A Project</h3>
+                <p>Artificial Intelligence for All. Engineered accessible AI models specifically designed to solve community-level problems through scalable technical solutions.</p>
+            </div>
+            <div class="card">
+                <img src="assets/images/design-thinking.jpg" alt="Design Thinking" class="project-img">
+                <h3>Design Thinking</h3>
+                <p>An innovative problem-solving initiative prioritizing user-centric design methodologies to optimize and streamline technical workflows.</p>
+            </div>
+            <div class="card">
+                <img src="assets/images/ace-project.jpg" alt="ACE Project" class="project-img">
+                <h3>ACE Project</h3>
+                <p>Advanced Computing Environment. Focused on seamless algorithm optimization, efficient memory management, and practical software deployment.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements" class="fade-in">
+        <h2>Certifications</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>🏅 Coursera Certification</h3>
+                <p>Successfully completed rigorous coursework focusing on advanced technical concepts and foundational engineering principles.</p>
+            </div>
+            <div class="card">
+                <h3>🌐 Netcad Certification</h3>
+                <p>Earned Cisco Networking Academy credentials, demonstrating a strong understanding of network architecture and data flow.</p>
+            </div>
+            <div class="card">
+                <h3>🧠 Yuva AI Certificate</h3>
+                <p>Recognized for high proficiency, participation, and innovative problem-solving within youth-focused Artificial Intelligence programs.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="fade-in">
+        <h2>Get In Touch</h2>
+        <div class="card" style="text-align: center; max-width: 600px; margin: 0 auto;">
+            <p style="margin-bottom: 2rem;">I am always looking for new opportunities, collaborations, or tech discussions. Feel free to reach out!</p>
+            <p><strong>Email:</strong> <a href="mailto:parasfatke@gmail.com" class="link">parasfatke@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+919579787325" class="link">+91 9579787325</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/parasfatke" target="_blank" class="link">github.com/parasfatke</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Paras Ajin Fatke. Built for the future.</p>
+    </footer>
+
+    <script>
+        // 1. Bulletproof Dark Mode Logic with LocalStorage saving
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.documentElement;
+        
+        // Check if user previously chose a theme
+        const savedTheme = localStorage.getItem('portfolioTheme');
+        if (savedTheme === 'dark') {
+            body.setAttribute('data-theme', 'dark');
+            themeToggle.textContent = '☀️ Light';
+        }
+
+        // Toggle Event
+        themeToggle.addEventListener('click', () => {
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                themeToggle.textContent = '🌙 Dark';
+                localStorage.setItem('portfolioTheme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeToggle.textContent = '☀️ Light';
+                localStorage.setItem('portfolioTheme', 'dark');
+            }
+        });
+
+        // 2. Smooth Fade-in Animations on Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
