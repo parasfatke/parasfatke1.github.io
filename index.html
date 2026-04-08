@@ -38,9 +38,8 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         html {
-            /* This fixes the navigation linking issue! */
             scroll-behavior: smooth;
-            scroll-padding-top: 90px; /* Prevents nav bar from covering sections */
+            scroll-padding-top: 90px; 
         }
 
         body {
@@ -56,7 +55,7 @@
             display: flex; justify-content: space-between; align-items: center;
             padding: 1.2rem 8%; 
             background: var(--nav-bg);
-            backdrop-filter: blur(10px); /* Blurry glass effect */
+            backdrop-filter: blur(10px); 
             border-bottom: 1px solid var(--border-color);
             position: sticky; top: 0; z-index: 1000;
             transition: all 0.3s ease;
@@ -137,6 +136,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#achievements">Certifications</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         <button id="theme-toggle" class="btn theme-btn">🌙 Dark</button>
@@ -165,19 +165,14 @@
         <h2>Featured Projects</h2>
         <div class="grid">
             <div class="card">
-                <img src="assets/images/ai4a-screenshot.jpg" alt="Ai4A" class="project-img">
-                <h3>Ai4A Project</h3>
-                <p>Artificial Intelligence for All. Engineered accessible AI models specifically designed to solve community-level problems through scalable technical solutions.</p>
-            </div>
-            <div class="card">
-                <img src="assets/images/design-thinking.jpg" alt="Design Thinking" class="project-img">
-                <h3>Design Thinking</h3>
-                <p>An innovative problem-solving initiative prioritizing user-centric design methodologies to optimize and streamline technical workflows.</p>
-            </div>
-            <div class="card">
                 <img src="assets/images/ace-project.jpg" alt="ACE Project" class="project-img">
                 <h3>ACE Project</h3>
                 <p>Advanced Computing Environment. Focused on seamless algorithm optimization, efficient memory management, and practical software deployment.</p>
+            </div>
+            <div class="card">
+                <img src="assets/images/solapur-tourism.jpg" alt="Solapur Tourism" class="project-img">
+                <h3>Solapur Tourism Web App</h3>
+                <p>A front-end web application built to beautifully showcase local landmarks, culture, and tourism information.</p>
             </div>
         </div>
     </section>
@@ -186,16 +181,16 @@
         <h2>Certifications</h2>
         <div class="grid">
             <div class="card">
+                <h3>🧠 Yuva AI for All Certificate</h3>
+                <p>Recognized for high proficiency, participation, and innovative problem-solving within youth-focused Artificial Intelligence programs.</p>
+            </div>
+            <div class="card">
+                <h3>🤖 Introduction to Modern AI</h3>
+                <p>Demonstrated a strong foundational understanding of modern artificial intelligence concepts, machine learning models, and their practical applications.</p>
+            </div>
+            <div class="card">
                 <h3>🏅 Coursera Certification</h3>
                 <p>Successfully completed rigorous coursework focusing on advanced technical concepts and foundational engineering principles.</p>
-            </div>
-            <div class="card">
-                <h3>🌐 Netcad Certification</h3>
-                <p>Earned Cisco Networking Academy credentials, demonstrating a strong understanding of network architecture and data flow.</p>
-            </div>
-            <div class="card">
-                <h3>🧠 Yuva AI Certificate</h3>
-                <p>Recognized for high proficiency, participation, and innovative problem-solving within youth-focused Artificial Intelligence programs.</p>
             </div>
         </div>
     </section>
